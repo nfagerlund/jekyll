@@ -9,9 +9,9 @@ module Jekyll
     def render(context)
       includes_dir = File.join(context.registers[:site].source, '_includes')
 
-      if File.symlink?(includes_dir)
-        return "Includes directory '#{includes_dir}' cannot be a symlink"
-      end
+#       if File.symlink?(includes_dir)
+#         return "Includes directory '#{includes_dir}' cannot be a symlink"
+#       end
 
       if @file !~ /^[a-zA-Z0-9_\/\.-]+$/ || @file =~ /\.\// || @file =~ /\/\./
         return "Include file '#{@file}' contains invalid characters or sequences"
